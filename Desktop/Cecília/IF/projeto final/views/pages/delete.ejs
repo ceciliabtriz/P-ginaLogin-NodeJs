@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!--!Exportação do head e definição do Título!-->
+    <%- include('../partials/head'); %>
+    <title>Deletar Usuário</title>
+</head>
+<body>
+    <!--!Cabeçalho-->
+    <%- include('../partials/header'); %>
+
+    <!--!Conteúdo principal-->
+    <main>
+        <!--*Título da página-->
+        <h1>Deletar</h1>
+
+        <!--*Pergunta sobre deletamento do usuário-->
+        <p class="w-90">
+            Deseja mesmo deletar o usuário que possui os dados especificados abaixo?
+        </p>
+
+        <!--*Tabela com os dados do usuário-->
+        <table class="w-90">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>E-mail</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td> <%= id %> </td>
+                    <td> <%= user['name'] %> </td>
+                    <td> <%= user['email'] %> </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!--*Botões de deletar ou cancelar:-->
+        <a href="/users" class="btn btn-danger w-40">
+            Deletar
+        </a>
+
+        <a href="/users" class="btn btn-warning w-40">
+            Cancelar
+        </a>
+    </main>
+
+    <!--!Rodapé-->
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+    
+    <!--!Importação do Scripts-->
+    <%- include('../partials/scripts'); %>
+</body>
+</html>

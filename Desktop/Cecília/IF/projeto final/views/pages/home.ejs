@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!--!Exportação do head e definição do Título!-->
+    <%- include('../partials/head'); %>
+    <title>Minha conta</title>
+</head>
+<body>
+    <!--!Cabeçalho-->
+    <%- include('../partials/header'); %>
+
+    <!--!Conteúdo principal-->
+    <main id="homepage">
+        <!--*Título da página-->
+        <h1>Seja bem-vindo!</h1>
+
+        <!--*Seção de usuários-->
+        <section>
+            <!--?Título da seção-->
+            <h2 class="text-center">Usuários</h2>
+
+            <!--?Lista dos usuários-->
+            <% for(var i = 0; i < users.length && i < 4; i++) { %>
+                <p>
+                    <%= users[i]['name'] %>
+                </p>
+            <% } %>
+
+            <!--?Botão de estender a visualização-->
+            <a href="/users">
+                <button class="btn btn-primary w-100">
+                    Visualizar
+                </button>
+            </a>
+        </section>
+    </main>
+
+    <!--!Rodapé-->
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+    
+    <!--!Importação do Scripts-->
+    <%- include('../partials/scripts'); %>
+</body>
+</html>

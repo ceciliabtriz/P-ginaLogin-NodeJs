@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!--!Exportação do head e definição do Título!-->
+    <%- include('../partials/head'); %>
+    <title>Usuários</title>
+</head>
+<body>
+    <!--!Cabeçalho-->
+    <%- include('../partials/header'); %>
+
+    <!--!Conteúdo principal-->
+    <main id="users">
+        <!--*Título da página-->
+        <h1 class="w-70 text-center">Usuários</h1>
+
+        <!--*Botão de criar um novo usuário-->
+        <a href="/users/register" class="w-20 text-left">
+            <button class="btn btn-success w-100">
+                Novo
+            </button>
+        </a>
+
+        <!--*Seção de usuários-->
+        <section class="mb-3">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="w-10">ID</th>
+                        <th class="w-70">Nome</th>
+                        <th class="w-20">Ações</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <% for(var i = 0; i < users.length; i++) { %>
+                        <tr>
+                            <td> <%= i %> </td>
+                            <td> <%= users[i]['name'] %> </td>
+                            <td>
+                                <a href="/users/update/<%= i %>" class="btn btn-info">
+                                    Editar
+                                </a>
+                                
+                                <a href="/users/delete/<%= i %>" class="btn btn-danger">
+                                    Deletar
+                                </a>
+                            </td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <!--!Rodapé-->
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+    
+    <!--!Importação do Scripts-->
+    <%- include('../partials/scripts'); %>
+</body>
+</html>

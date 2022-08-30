@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!--!Exportação do head e definição do Título!-->
+    <%- include('../partials/head'); %>
+    <title>Registrar Usuários</title>
+</head>
+<body>
+    <!--!Cabeçalho-->
+    <%- include('../partials/header'); %>
+
+    <!--!Conteúdo principal-->
+    <main>
+        <!--*Título da página-->
+        <h1>Registro</h1>
+
+        <!--*Formulário de adição-->
+        <form class="w-75" action="/users">
+            <!--?Input de Nome, E-mail e Senha-->
+            <label class="form-group w-100">
+                Nome: 
+                <input type="text" name="name" class="form-control">
+            </label>
+            <label class="form-group w-100">
+                E-mail:
+                <input type="email" name="email" class="form-control">
+            </label>
+            <label class="form-group w-100">
+                Senha:
+                <input type="password" name="password" class="form-control">
+            </label>
+
+            <!--?Botão de registar-->
+            <button type="submit" name="submit" class="btn btn-primary w-100 mt-2 ">Registar</button>
+        </form>
+    </main>
+
+    <!--!Rodapé-->
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+    
+    <!--!Importação do Scripts-->
+    <%- include('../partials/scripts'); %>
+</body>
+</html>
